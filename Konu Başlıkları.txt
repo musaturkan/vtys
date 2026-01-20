@@ -1,0 +1,121 @@
+1.Hafta 
+Temel Veri Tabanı Kavramları
+
+SQL Nedir? VTYS Nedir?
+Tablo Nedir?
+Birincil Anahtar, Misafir Anahtar, Kayıtları İlişkilendirme
+Bire çok ilişkilendirme
+
+2.Hafta
+
+Örnek Veri Tabanı Tasarım
+Bir okula ait veri tabanı tasarlanacaktır. 
+Okuldaki öğrencilerin bilgilerin saklanacaktır
+Ders bilgileri de sistemte tutulacaktır.
+Her bir dersin adı, kodu ve içeriği sisteme eklenecektir.
+Her bir öğrencinin aldığı dersler sistemde tutulacaktır.
+Öğrencilerin sınav notları da sistemde tutulacaktır.
+öğrenciler okulda bölümlerer kayıtlı olarak tutulacaktır.
+Her bir öğrenci bir veya birden fazla bölüme kayıtlı olabilecektir.
+Her bir öğrenci için bir veya daha fazla telefon numarası saklanabilir.
+Örneğin ileşitişim telefonu, ev telefonu, iş telefonu gibi farklı türlerde telefon
+bilgisi saklanacaktır.
+öğrencilere ait adres bilgileri de sistemde tutulacaktır.
+Bir öğerencinin birden fazla adresi olabilir mi? Evet olabilir.
+Öğrencilerin yoklama bilgileri de sistemde tutulmak isteniyor.
+Ders programları da sistemde kayıt edilecektir.
+
+SQL Server İndirme ve Kurulum
+
+3. Hafta
+Örnek veri tabanı tasarımı, kayıtları ilişkilendimek, bire çok ve çoka çok ilişkilendirme
+Analizde tespit edilen nesnelerin ilişkilendirilmesi
+Sql Server Kurulumu
+Temel Sql Komutları
+Nesne Oluşturma Komutları
+create database, drop database, create table, alter table komutları
+create table Kiralama
+(
+Id int primary key identity(1,1),
+KullaniciId int Foreign Key References Kullanici(Id),
+DaireId int Foreign Key References Daire(Id),
+BaslamaTarihi datetime,
+BitisTarihi datetime,
+Durum bit
+)
+Veri Sorgulama Dili
+Veri ekleme, veri seçme, veri silme, veri güncelleme
+insert into Bina(Ad,Adres,YapilmaTarihi)
+values('Çiğdem Apartmanı','Bilecik Ertuğrul Gazi','2018-10-15')
+
+4.Hafta
+Bulk insert: Bir sorgunun sonucunu tabloya yeni kayıt olarak eklemek
+insert into Daire(BinaId,Ad,Kat,Numara)
+select '',Ad,Kat,Numara from Daire
+where BinaId='1005'
+Where ile kayıtları filtrelemek
+Kayıtları silmek
+Kayıtları güncellemek
+Tabloları birleştirerek sorgulamak
+inner join, left join, right join, full join
+Sorgu sonucunda sütunlara takma ad vermek
+
+5.Hafta
+Sistem Fonksiyonları Kullanımı
+Alt sorgularla çalışmak
+in operatörü kullanımı
+Türetilmiş tablolar
+Verileri gruplayarak sorgulamak
+Gruplanmış veriler üzerinden şart koşmak
+Cube ve Rolup deyimi kullanımını
+
+6.Haftas
+Stored proseüdler
+parametreli prosedür, parametresiz prosedür
+out parametreli prosedür
+prosedürleri çağırmak
+Çıktı parametreli prosedür kullanmak
+sql ortamında değişken tanımlamak
+tablo tipinden değişkenlerin kullanımı
+
+7.Hafta
+Kullanıcı taınmlı fonksiyonlar
+parametreli ve parametresiz fonksiyonlar
+fonksiyon sonucu tablo ile birleştirerek sorgulama
+Scalar Fonksiyon
+Tablo döndüren fonksiyon
+View kavramı
+Index Kavramı, noncluster index
+
+8.Hafta
+Trigger Kavramı
+AdwentureWork Veri Tabanı Örnek Sorguları
+https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver17&tabs=ssms
+
+9. Hafta
+AdwentureWorks veri tabanı inceleme ve sorular
+Nosql Sistemlerine giriş
+
+10.Hafta
+Cursor Kullanımı - Kayıtlara sırayla erişmek
+Rütbeleme fonksiyonları kullanımı - RowNumber, Rank, Dense_Rank kullanım
+Sql Server Login ve User nesnelerinin kullanılması, user yetkilendirme
+Maintanence Plan oluşturma
+Dinamik Sql Sorguları
+NoSQL - SQL Farkı Makalesi: https://www.mongodb.com/resources/basics/databases/nosql-explained/nosql-vs-sql#use-cases-of-sql-vs-nosql-database-technology
+
+
+11.Hafta
+NoSql Sistemler
+MongoDb
+
+12. MongoDB Nedir?
+MongoDB temel crud atlas sorguları
+MongoDB veri tabanı oluşturma
+Collection oluşturma
+fieldlar üzerinden sorgu
+
+13. Hafta
+Programatik olarak veri tabanına bağlamak
+Ado net ile bağlanmak
+EntityFrameworkCore ile bağlantı yapmak
